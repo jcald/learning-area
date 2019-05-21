@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Simple forEach example</title>
-  </head>
-  <body>
-    <script>
-    const gods = ['Apollo', 'Artemis', 'Ares', 'Zeus'];
+    <link rel="stylesheet" href="jcc.css">
+</head>
 
-    gods.forEach(function (eachName, index){
-      console.log(index + '. ' + eachName);
-    });
+<body>
+    <script src="../jcc.js"></script>
+    <script>
+        const gods = ['Apollo', 'Artemis', 'Ares', 'Zeus'];
+
+        gods.forEach(function(eachName, index) {
+            console.log(index + '. ' + eachName);
+        });
     </script>
-  </body>
+</body>
+
 </html>
