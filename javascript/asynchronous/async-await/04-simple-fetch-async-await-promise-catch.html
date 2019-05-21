@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title id='title'></title>
+</head>
+
+<body>
+    <h1 id="tit"></h1>
+    <script>
+        function jcc() {
+            reg = /\/([^\/]*$)/;
+            document.getElementById("tit").innerText = reg.exec(document.location.href)[1];
+            document.getElementById("title").innerText = document.getElementById("tit").innerText;
+            console.log("Inicio ----------------");
+        };
+        jcc();
+
+
+        async function myFetch() {
+            let response = await fetch('koffee.jpg');
+            return await response.blob();
+        }
+
+        myFetch()
+            .then((blob) => {
+                let objectURL = URL.createObjectURL(blob);
+                let image = document.createElement('img');
+                image.src = objectURL;
+                document.body.appendChild(image);
+            })
+            .catch((e) =>
+                console.log("Error jcc: ", e)
+            );
+    </script>
+</body>
+
+</html>
